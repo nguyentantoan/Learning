@@ -14,14 +14,13 @@
           <%= @user.email %>
         </label>
 
-        <br>
-        <label>
-          <strong>Password:</strong>
-          <%= @user.password %>
-        </label>
-      </div>
-      <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %>
+        <label>My Avatar</label>
+           <%= image_tag(@user.avatar_url) if @user.avatar? %>
+         </p>
 
-      <%= link_to "Logout", logout_path, method: :delete , class:"btn btn-warning" %>
-      </div>
+       </div>
+        <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %>
+
+        <%= link_to "Logout", logout_path, method: :delete , class:"btn btn-warning" %>
+       </div>
    </div>
