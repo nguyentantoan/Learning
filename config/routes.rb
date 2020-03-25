@@ -6,7 +6,5 @@ Rails.application.routes.draw do
   post "users/sign_in" => "sessions#create"
   delete "logout" => "sessions#destroy"
   resources :users, only: [:show, :edit, :update]
-  resources :categories, only: [:new, :index, :create]
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
