@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email
     @user = params[:user]
-    @url  = 'sign_in_url'
+    @url  = sign_in_url
     mail(to: @user.email, subject: 'Welcome Learning')
   end
 end
