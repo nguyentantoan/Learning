@@ -1,9 +1,10 @@
 class UserMailer < ApplicationMailer
+  include Rails.application.routes.url_helpers
   default from: 'notifications@example.com'
 
   def welcome_email
     @user = params[:user]
-    @url  = sign_in_url
+    @url  = users_sign_in_url
     mail(to: @user.email, subject: 'Welcome Learning')
   end
 end
