@@ -1,8 +1,8 @@
 <% provide(:title, 'Edit user') %>
 <% provide(:button_text, 'Save') %>
 <h1>update</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: @user %>
       <br>
@@ -12,12 +12,12 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
       <br>
-      
+
       <%= image_tag(@user.avatar_url) if @user.avatar? %>
       <%= f.file_field :avatar %>
       <br>
 
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

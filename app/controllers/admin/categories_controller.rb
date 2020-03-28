@@ -1,10 +1,7 @@
-class Admin::CategoriesController < ApplicationController
-  def index
-    @categories = Category.all
-  end
+# frozen_string_literal: true
 
-  def new
-  end
+class Admin::CategoriesController < ApplicationController
+  def new;end
 
   def create
     @category = Category.new category_params
@@ -18,6 +15,7 @@ class Admin::CategoriesController < ApplicationController
 
   # strong params
   private
+  
   def category_params
     params.require(:category).permit :name
   end
