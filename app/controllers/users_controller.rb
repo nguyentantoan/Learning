@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Update thanh cong"
+      flash[:success] = 'Update thanh cong'
       redirect_to @user
     else
       render 'edit'
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.with(user: @user).welcome_email.deliver_now
-      flash[:success] = "Dang ki thanh cong"
+      flash[:success] = 'Dang ki thanh cong'
       redirect_to root_path
     else
       flash[:success] = "Dang ki khong thanh cong"
