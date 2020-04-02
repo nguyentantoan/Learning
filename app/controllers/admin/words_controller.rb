@@ -8,7 +8,6 @@ class Admin::WordsController < ApplicationController
 
   def new
     @word = Word.new
-    3.times {@word.word_answers.build}
   end
 
   def create
