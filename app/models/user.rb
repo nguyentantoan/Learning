@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :lessons
   mount_uploader :avatar, AvatarUploader
   has_secure_password
 

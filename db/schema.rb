@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_025955) do
 
   create_table "words", force: :cascade do |t|
     t.string "content"
+    t.string "word_id"
     t.string "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
