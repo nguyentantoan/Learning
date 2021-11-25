@@ -1,0 +1,15 @@
+<% form_for Word.new, url:admin_words_path do|f|%>
+  <p>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </p>
+  <% f.fields_for :word_answers do |builder| %>
+  <p>
+    <%= builder.label :content ,"word_answer" %>
+    <%= builder.text_area :content %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.submit 'submit' %>
+  </p>
+<%end%>
